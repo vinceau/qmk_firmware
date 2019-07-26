@@ -6,9 +6,10 @@
 
 // Layer definition
 #define BL 0  // Base layer
-#define NL 1  // Numpad layer
-#define VL 2  // Vim layer
-#define SL 3  // Settings layer
+#define WL 1  // Windows layer
+#define NL 2  // Numpad layer
+#define VL 3  // Vim layer
+#define SL 4  // Settings layer
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -19,6 +20,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	LT(NL, KC_ESCAPE), KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT, KC_ENT,          // 13
 	KC_LSFT, XXXX, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT, KC_UP, KC_DEL,  // 15
 	KC_LCTL, KC_LALT, KC_LGUI, KC_SPC, MO(SL), LT(VL, KC_SPC), KC_RGUI, KC_RALT, KC_LEFT, KC_DOWN, KC_RIGHT),   // 11
+
+// Remappings for Windows
+[WL] = LAYOUT_all(
+	____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, XXXX, ____,
+	____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____,
+	____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____,
+	____, XXXX, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____,
+	____, KC_LGUI, KC_LALT, ____, ____, ____, ____, ____, ____, ____, ____),
+
 
 // Number pad layer
 [NL] = LAYOUT_all(
@@ -31,7 +41,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // LDUR Vim layer
 [VL] = LAYOUT_all(
 	____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, XXXX, ____,
-	____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____,
+	____, ____, TG(WL), ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____,
 	____, ____, ____, ____, ____, ____, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, ____, ____, ____,
 	____, XXXX, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____,
 	____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____),
