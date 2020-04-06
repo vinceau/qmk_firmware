@@ -22,7 +22,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	KC_LCTL, KC_LGUI, KC_LALT, KC_SPC, MO(SL), LT(VL, KC_SPC), KC_RGUI, KC_RALT, KC_LEFT, KC_DOWN, KC_RIGHT),   // 11
 
 // Swap left GUI and left ALT for Mac
-[WL] = LAYOUT_all(
+[ML] = LAYOUT_all(
 	____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, XXXX, ____,
 	____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____,
 	____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____,
