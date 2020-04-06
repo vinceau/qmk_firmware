@@ -6,7 +6,7 @@
 
 // Layer definition
 #define BL 0  // Base layer
-#define WL 1  // Windows layer
+#define ML 1  // Mac layer
 #define NL 2  // Numpad layer
 #define VL 3  // Vim layer
 #define SL 4  // Settings layer
@@ -19,15 +19,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_LBRC, KC_RBRC, KC_BSLS,              // 14
 	LT(NL, KC_ESCAPE), KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT, KC_ENT,          // 13
 	KC_LSFT, XXXX, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT, KC_UP, KC_DEL,  // 15
-	KC_LCTL, KC_LALT, KC_LGUI, KC_SPC, MO(SL), LT(VL, KC_SPC), KC_RGUI, KC_RALT, KC_LEFT, KC_DOWN, KC_RIGHT),   // 11
+	KC_LCTL, KC_LGUI, KC_LALT, KC_SPC, MO(SL), LT(VL, KC_SPC), KC_RGUI, KC_RALT, KC_LEFT, KC_DOWN, KC_RIGHT),   // 11
 
-// Remappings for Windows
+// Swap left GUI and left ALT for Mac
 [WL] = LAYOUT_all(
 	____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, XXXX, ____,
 	____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____,
 	____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____,
 	____, XXXX, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____,
-	____, KC_LGUI, KC_LALT, ____, ____, ____, ____, ____, ____, ____, ____),
+	____, KC_LALT, KC_LGUI, ____, ____, ____, ____, ____, ____, ____, ____),
 
 
 // Number pad layer
@@ -49,7 +49,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // Setup layer - Reset
 [SL] = LAYOUT_all(
 	RESET, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12, XXXX, KC_DEL,
-	____, ____, TG(WL), ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____,
+	____, ____, TG(ML), ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____,
 	____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____,
 	____, XXXX, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, RESET,
 	____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____),
