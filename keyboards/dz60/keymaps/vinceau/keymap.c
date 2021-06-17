@@ -46,12 +46,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	____, XXXX, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____,
 	____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____),
 
-// Setup layer - Reset
+// Setup layer - Reset, Function keys, Media controls
 [SL] = LAYOUT_all(
 	RESET, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12, XXXX, KC_DEL,
 	____, ____, TG(ML), ____, ____, ____, ____, ____, ____, ____, KC_MEDIA_PLAY_PAUSE, ____, ____, ____,
 	____, ____, ____, ____, ____, ____, KC_MEDIA_PREV_TRACK, KC_AUDIO_VOL_DOWN, KC_AUDIO_VOL_UP, KC_MEDIA_NEXT_TRACK, ____, ____, ____,
-	____, XXXX, ____, ____, ____, ____, ____, ____, KC_AUDIO_MUTE, ____, ____, ____, ____, ____, RESET,
+	____, XXXX, KC_SYSTEM_SLEEP, ____, ____, ____, ____, ____, KC_AUDIO_MUTE, ____, ____, ____, ____, ____, RESET,
 	____, ____, ____, ____, ____, ____, ____, ____, ____, ____, ____),
 
 };
