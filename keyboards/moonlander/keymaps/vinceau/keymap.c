@@ -24,6 +24,7 @@
 enum layers {
     BASE,  // default layer
     SYMB,  // symbols
+    NUM,   // number pad
     MDIA,  // media keys
 };
 
@@ -36,10 +37,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [BASE] = LAYOUT_moonlander(
         KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_LEFT,           KC_RGHT, KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS,
         KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    TG(SYMB),         TG(SYMB), KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS,
-        KC_ESCAPE, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_HYPR,           KC_MEH,  KC_H,    KC_J,    KC_K,    KC_L,    LT(MDIA, KC_SCLN), LGUI_T(KC_QUOT),
+        LT(NUM, KC_ESCAPE), KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_HYPR,           KC_MEH,  KC_H,    KC_J,    KC_K,    KC_L,    LT(MDIA, KC_SCLN), LGUI_T(KC_QUOT),
         KC_LSFT, KC_Z, KC_X, KC_C,    KC_V,    KC_B,                                KC_N,    KC_M,    KC_COMM, KC_DOT,  RCTL_T(KC_SLSH), KC_RSFT,
         KC_LCTL,WEBUSB_PAIR,A(KC_LSFT),KC_LEFT, KC_RGHT,  LALT_T(KC_APP),    RCTL_T(KC_ESC),   KC_UP,   KC_DOWN, KC_LBRC, KC_RBRC, MO(SYMB),
                                             KC_SPC,  KC_BSPC, KC_LGUI,           KC_LALT,  KC_TAB,  KC_ENT
+    ),
+
+    [NUM] = LAYOUT_moonlander(
+        _______, _______, _______, _______, _______, _______, _______,           _______, _______, _______, KC_EQUAL, KC_SLASH, KC_ASTR, _______,
+        _______, _______, _______, _______, _______, _______, _______,           _______, _______, KC_7,    KC_8,    KC_9,    KC_MINUS, _______,
+        _______, _______, _______, _______, _______, _______, _______,           _______, _______, KC_4,    KC_5,    KC_6,    KC_PLUS,  _______,
+        _______, _______, _______, _______, _______, _______,                             _______, KC_1,    KC_2,    KC_3,    KC_ENTER, _______,
+        _______, _______, _______, _______, _______,          _______,           _______,          KC_0,    KC_0,  KC_DOT,    KC_ENTER,  _______,
+                                            _______, _______, _______, _______ ,_______, _______
     ),
 
     [SYMB] = LAYOUT_moonlander(
