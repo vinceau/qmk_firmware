@@ -25,6 +25,7 @@ enum layers {
     BASE,  // default layer
     SYMB,  // symbols
     NUM,   // number pad
+    MAC,   // mac
     VIM,   // vim navigation
     MDIA,  // media keys
 };
@@ -40,8 +41,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    TG(SYMB),         TG(SYMB), KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
         LT(NUM, KC_ESCAPE), KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_HYPR,           KC_MEH,  KC_H,    KC_J,    KC_K,    KC_L,    LT(MDIA, KC_SCLN), LGUI_T(KC_QUOT),
         KC_LSFT, KC_Z, KC_X, KC_C,    KC_V,    KC_B,                                KC_N,    KC_M,    KC_COMM, KC_DOT,  RCTL_T(KC_SLSH), KC_RSFT,
-        KC_LCTL, KC_LGUI, A(KC_LSFT), KC_LALT, KC_LGUI,  LALT_T(KC_APP),    RCTL_T(KC_ESC),   KC_RALT,   KC_RCTL, KC_LBRC, LT(SYMB, KC_RBRC), KC_ENTER,
+        KC_LCTL, KC_LGUI, KC_LALT, KC_LGUI, KC_SPC,  LALT_T(KC_APP),    TG(MAC),   KC_RALT,   KC_RCTL, KC_LBRC, LT(SYMB, KC_RBRC), KC_ENTER,
                                             KC_SPC,  KC_BSPC, KC_LGUI,           KC_RGUI,  MO(VIM),  KC_ENT
+    ),
+
+    [MAC] = LAYOUT_moonlander(
+        _______, _______, _______, _______, _______, _______, _______,           _______, _______, _______,  _______, _______, _______,  _______,
+        _______, _______, _______, _______, _______, _______, _______,           _______, _______, _______, _______, _______, _______, _______,
+        _______, _______, _______, _______, _______, _______, _______,           _______, _______, _______, _______, _______, _______,  _______,
+        _______, _______, _______, _______, _______, _______,                             _______, _______, _______, _______, _______, _______,
+        _______, KC_LALT, KC_LGUI, _______, _______,          _______,           _______,          KC_RGUI, KC_RALT, _______, _______, _______,
+                                            _______, _______, _______, _______ ,_______, _______
     ),
 
     [NUM] = LAYOUT_moonlander(
