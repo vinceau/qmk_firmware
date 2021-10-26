@@ -42,7 +42,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         LT(NUM, KC_ESCAPE), KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    XXXXXXX,         XXXXXXX,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
         KC_LSFT,            KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                                 KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
         KC_LCTL,            KC_LALT, KC_LGUI, XXXXXXX, KC_SPC,           TG(WIN),        TG(SYMB),             KC_RGUI, KC_RALT, KC_LBRC, KC_RBRC, MO(SYMB),
-                                            KC_SPC,  MO(SYMB), MO(MDIA),           MO(MDIA),  MO(VIM),  KC_ENT
+                                            KC_SPC,  MO(SYMB), MO(MDIA),           MO(MDIA),  LT(VIM, KC_SPC), KC_ENT
     ),
 
     [WIN] = LAYOUT_moonlander(
