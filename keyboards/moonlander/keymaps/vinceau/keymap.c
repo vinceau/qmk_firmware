@@ -23,6 +23,7 @@
 
 enum layers {
     BASE,  // default layer
+    ARR,   // arrow keys layer
     WIN,   // windows layer
     NUM,   // number pad
     SYMB,  // symbols
@@ -43,6 +44,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_LSFT,            KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                                 KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
         KC_LCTL,            KC_LALT, KC_LGUI, XXXXXXX, KC_SPC,           TG(WIN),        TG(SYMB),             KC_RGUI, KC_RALT, KC_LBRC, KC_RBRC, MO(SYMB),
                                             KC_SPC,  MO(SYMB), MO(MDIA),           MO(MDIA),  LT(VIM, KC_SPC), KC_ENT
+    ),
+
+    [ARR] = LAYOUT_moonlander(
+        _______, _______, _______, _______, _______, _______, _______,           _______, _______, _______,  _______, _______, _______,  _______,
+        _______, _______, _______, _______, _______, _______, _______,           _______, _______, _______, _______, _______, _______, _______,
+        _______, _______, _______, _______, _______, _______, _______,           _______, _______, _______, _______, _______, _______,  _______,
+        _______, _______, _______, _______, _______, _______,                             _______, _______, _______, _______, KC_UP, _______,
+        _______, _______, _______, _______, _______,          _______,           _______,          _______, _______, KC_LEFT, KC_DOWN, KC_RIGHT,
+                                            _______, _______, _______, _______ ,_______, _______
     ),
 
     [WIN] = LAYOUT_moonlander(
@@ -67,8 +77,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         VRSN,    KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   _______,           KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,
         _______, KC_EXLM, KC_AT,   KC_LCBR, KC_RCBR, KC_PIPE, KC_BSLS,           _______, _______, _______, _______, _______, _______, _______,
         _______, KC_HASH, KC_DLR,  KC_LPRN, KC_RPRN, KC_GRV,  _______,           RGB_TOG, _______, _______, _______, _______, _______, _______,
-        _______, KC_PERC, KC_CIRC, KC_LBRC, KC_RBRC, KC_TILD,                             KC_AMPR, _______, _______, _______, _______, _______,
-        EEP_RST, _______, _______, _______, _______,          RGB_VAI,           _______,          _______, _______, _______, _______,  _______,
+        _______, KC_PERC, KC_CIRC, KC_LBRC, KC_RBRC, KC_TILD,                             KC_AMPR, _______, _______, _______, KC_PGUP, _______,
+        EEP_RST, _______, _______, _______, _______,          RGB_VAI,           _______,          _______, _______, KC_HOME, KC_PGDN, KC_END,
                                             RGB_HUD, RGB_VAD, RGB_HUI, TOGGLE_LAYER_COLOR,_______, _______
     ),
 
